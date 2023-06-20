@@ -1,0 +1,8 @@
+This puppet module installs apache for RHEL, starts the service and creates a basic static webpage from an erb template.
+If the uninstall => true argument is passed in the command, it will stop the service, purge httpd from the system and remove the index.html file.
+On the system, the module is stored just below the root directory, if stored anywhere else, the syntax of the command/files will have to be altered.
+
+The command used is.
+puppet apply --modulepath=/root/ -e "class {'apachehost' : uninstall => false}"
+or if you want to uninstall,
+puppet apply --modulepath=/root/ -e "class {'apachehost' : uninstall => true}"
